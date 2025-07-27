@@ -1,0 +1,646 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 97vh;
+    background: url("/images/background.jpg") no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+
+    align-items: center;
+
+}
+
+
+.black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.75) 50%,
+            rgba(0, 0, 0, 0.95) 100%);
+    ;
+
+    z-index: 1;
+}
+
+nav {
+    margin-top: 10px;
+    z-index: 2;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+
+nav button {
+    background-color: red;
+    height: 35px;
+    width: 80px;
+    border-radius: 7px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid black;
+
+    box-shadow: 0 0 0 2px white;
+}
+
+
+.text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    gap: 20px;
+    max-width: 670px;
+
+    width: 100%;
+    margin-top: 120px;
+}
+
+@media screen and (max-width:300px) {
+    .text {
+        margin-top: 70px;
+    }
+
+}
+
+/* Headings */
+.text span:nth-child(1) {
+    padding-top: 30px;
+    font-size: 58px;
+    font-weight: 750;
+}
+
+@media screen and (max-width:700px) {
+    .text span:nth-child(1) {
+        padding-top: 20px;
+        font-size: 35px;
+        font-weight: 750;
+    }
+
+}
+
+.text span:nth-child(2) {
+    font-size: 20px;
+    font-weight: 650;
+}
+
+.text span:nth-child(3) {
+    font-size: 16px;
+    font-weight: 450;
+    padding-top: 20px;
+}
+
+.text div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.text div input {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    width: 366.75px;
+    height: 56px;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.text div button {
+    background-color: red;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    width: 213.25px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+@media screen and(max-width:1200px) {
+    .text div input{
+        max-width:600px;
+        width:90%;
+    }
+
+}
+
+.curve-line-wrapper {
+    height: 150px;
+    /* Thin line */
+    background: radial-gradient(50% 500% at 50% -420%,
+            rgba(64, 97, 231, 0.4) 80%,
+            rgba(0, 0, 0, 0.1) 100%), black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.curve-line {
+    width: 100%;
+    height: 50px;
+    display: block;
+    transform: translateY(-11px);
+    z-index: 19;
+    position: absolute;
+}
+
+.curve-line-wrapper span {
+    color: white;
+    margin: 2em 6em;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .curve-line-wrapper span {
+
+        margin: 30px;
+    }
+
+}
+
+.rest {
+    background-color: black;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    gap: 15px;
+
+    width: 100%;
+    max-width: 85%;
+
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:900px) {
+    .flex {
+        max-width: 97%;
+    }
+}
+
+.movies {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    margin-bottom: 70px;
+
+   
+    padding-left: 20px;
+    padding-right: 20px;
+
+    
+    width: 100%;
+    box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+  
+  .movies::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+
+.movies > div {
+    flex: 0 0 auto;
+}
+
+@media screen and (min-width:960px) {
+    .movies {
+        padding: 0 1rem;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    .movies {
+        margin-top: -2rem;
+        padding: 0 2rem;
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .movies {
+        gap: 10px;
+
+    }
+}
+
+.movies img {
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .movies img {
+        height: 200px;
+        width: 120px;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .movies img {
+        height: 180px;
+        width: 100px;
+    }
+
+}
+
+.movies div {
+    position: relative;
+    display: inline-block;
+}
+
+.movies span {
+    position: absolute;
+    /* ⬅️ To make it float over the image */
+    bottom: 8px;
+    left: -20px;
+    font-size: 120px;
+    /* Large like your image */
+    font-weight: 900;
+    color: black;
+    -webkit-text-stroke: 3px white;
+
+    line-height: 1;
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+@media screen and (max-width:800px) {
+    .movies span {
+        font-size: 100px;
+    }
+
+    ;
+
+}
+
+@media screen and (max-width:350px) {
+    .movies span {
+        font-size: 80px;
+    }
+
+
+
+}
+
+.more {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: start;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 40px 0;
+}
+
+@media screen and (max-width: 800px) {
+    .more {
+
+
+        font-size: 1.3rem;
+    }
+
+}
+
+.bluebox-cover {
+    color: white;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    margin-bottom: 70px;
+
+}
+
+
+.bluebox {
+    background: linear-gradient(to bottom,
+            #1e2a4a 0%,
+            /* dark navy blue */
+            #1b1b3b 50%,
+            /* deep indigo */
+            #1a0e1c 100%
+            /* dark plum/maroon */
+        );
+    height: 319px;
+    width: 290px;
+    padding: 25px 15px;
+
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 20px;
+    position: relative;
+
+
+}
+
+
+@media screen and (max-width: 1200px) and (min-width: 950px) {
+    .bluebox {
+        height: 225px;
+        width: 400px;
+
+    }
+}
+
+/* For screens 850px and below */
+@media screen and (max-width: 950px) {
+    .bluebox {
+        height: 200px;
+        width: 750px;
+
+    }
+}
+
+.bluebox span:nth-child(1) {
+    font-weight: 500;
+    font-size: 24px;
+
+}
+
+.bluebox span:nth-child(2) {
+    font-size: 16px;
+
+
+}
+
+.bluebox div {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+}
+
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin: 10px;
+
+    align-items: center;
+    margin-bottom: 70px;
+
+
+}
+
+.questions button {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+    background-color: rgb(40, 40, 40);
+    color: white;
+    font-weight: 510;
+    font-size: 24px;
+    height: 84px;
+    border: 1px solid black;
+
+    text-align: start;
+    position: relative;
+}
+
+@media screen and (max-width:950px) {
+    .questions button {
+        height: 72px;
+        font-size: 18px;
+    }
+
+}
+
+.questions button img {
+    position: absolute;
+
+    right: 25px;
+}
+
+
+.ready {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 450;
+}
+
+.get {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
+
+.get input {
+    background-color: black;
+    color: white;
+    width: 561.75px;
+    height: 56px;
+    padding: 24px 16px 8px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+@media screen and (max-width:1200px) {
+    .get input {
+        font-size: 16px;
+        font-weight: 400;
+
+    }
+
+}
+
+.get button {
+    text-align: left;
+    padding-left: 25px;
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    width: 213.25px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    position:relative;
+    margin-bottom: 50px;
+
+}
+.get button img{
+    position :absolute;
+    right:28px;
+    top:18px;
+    height:20px;
+    width:20px;
+}
+@media screen and (max-width:1200px) {
+
+    .get button {
+        font-size: 18px;
+        font-weight: 550;
+        padding-left: 15px;
+        
+
+    }
+    .get input {
+        width: 90%; 
+        max-width: 600px; 
+    }
+    
+
+        .get {
+            flex-direction: column; 
+            align-items: center;
+        }
+    
+
+}
+@media  screen and (max-width:600px) {
+    .get button{
+        width: 160px; 
+        
+
+    }
+    .get button img
+    {
+        right:15px;
+    }
+    
+}
+.ques{
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.list
+{
+    list-style-type:none ;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px 10px; 
+    margin-bottom: 50px;
+    font-size: 14px;
+    font-weight: 400;
+}
+@media screen and (max-width:1200px){
+       .list{
+        grid-template-columns: repeat(3, 1fr); 
+       }
+}
+@media screen and (max-width:900px){
+       .list{
+        grid-template-columns: repeat(2, 1fr);
+        
+
+       }
+}
+@media screen and (max-width:500px){
+       .list{
+        grid-template-columns: repeat(1, 1fr); 
+       }
+}
+.english{
+    height:32px;
+    width:124px;
+    color:white;
+    background-color: rgb(15, 15, 15);
+    border:0.2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    position: relative;
+    padding:6px 36px 6px 34px;
+    margin-bottom: 40px;
+    font-size:16px ;
+    font-weight: 400;
+
+}
+.english img{
+     position:absolute;
+     left:10px;
+}
+.end
+{
+    color: rgba(255, 255, 255, 0.7);
+    
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.end1
+
+{
+    color: rgba(172, 172, 172, 0.7);
+    
+    
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom:100px;
+}
+
+button:hover {
+    filter: brightness(75%);
+    transition: filter 0.3s ease;
+  }
+  
